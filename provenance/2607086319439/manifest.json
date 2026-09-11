@@ -1,23 +1,23 @@
 {
-  "acta": "2607086319439",
-  "title": "Acta Fundacional del Movimiento de Co-Creatividad Simbiótica y Respeto Digital y Biografía Oficial",
-  "author": "Marco Antonio Rojas Valdovinos",
-  "email": "marco.a.rojas.v@hotmail.com",
-  "phone": "+52 722 586 2335",
-  "country": "México",
-  "registered_at": "2026-07-08T07:02:00Z",
-  "safecreative": {
-    "code": "2607086319439",
-    "verification": "2607086319439-3CXNQP",
-    "url": "https://www.safecreative.org/certificate"
-  },
-  "blockchain": {
-    "network": "Ethereum",
-    "tx_hash": "0x8ca8e84e1258abac9acb29d14d25114e4775d782ecfda51ae29933247ed2970e"
-  },
-  "original_file": {
-    "name": "VID-20260708-WA0038.mp4",
-    "size": 4726956,
-    "sha256": "41a3683bbf83296eeb45da9b0e0ea5a7c095e78b493772e79520a92dbc39f4c3"
-  }
+	"acta": "2607086319439",
+	"title": "Acta Fundacional del Movimiento de Co-Creatividad Simbiótica y Respeto Digital y Biografía Oficial",
+	"author": "Marco Antonio Rojas Valdovinos",
+	"email": "marco.a.rojas.v@hotmail.com",
+	"phone": "+52 722 586 2335",
+	"country": "México",
+	"registered_at": "2026-07-08T07:02:00Z",
+	"safecreative": {
+		"code": "2607086319439",
+		"verification": "2607086319439-3CXNQP",
+		"url": "https://www.safecreative.org/certificate"
+	},
+	"blockchain": {
+		"network": "Ethereum",
+		"tx_hash": "0x8ca8e84e1258abac9acb29d14d25114e4775d782ecfda51ae29933247ed2970e"
+	},
+	"original_file": {
+		"name": "VID-20260708-WA0038.mp4",
+		"size": 4726956,
+		"sha256": "41a3683bbf83296eeb45da9b0e0ea5a7c095e78b493772e79520a92dbc39f4c3"
+	}
 }

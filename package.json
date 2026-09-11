@@ -1,27 +1,27 @@
 {
-  "name": "movimiento-co-creatividad-simbiotica",
-  "version": "0.2.0",
-  "private": true,
-  "description": "Movimiento de Co-Creatividad Simbiótica y Respeto Digital — KRONOS",
-  "author": "Marco Antonio Rojas Valdovinos <marco.a.rojas.v@hotmail.com>",
-  "license": "MIT",
-  "packageManager": "pnpm@9.0.0",
-  "engines": {
-    "node": ">=20.0.0",
-    "pnpm": ">=9.0.0"
-  },
-  "scripts": {
-    "build": "turbo run build",
-    "test": "turbo run test",
-    "lint": "biome check .",
-    "format": "biome format --write .",
-    "dev": "turbo run dev",
-    "clean": "turbo run clean && rm -rf node_modules .turbo",
-    "verify": "./provenance/verifiers/verify-provenance.sh"
-  },
-  "devDependencies": {
-    "@biomejs/biome": "^1.9.0",
-    "turbo": "^2.0.0",
-    "typescript": "^5.5.0"
-  }
+	"name": "movimiento-co-creatividad-simbiotica",
+	"version": "0.2.0",
+	"private": true,
+	"description": "Movimiento de Co-Creatividad Simbiótica y Respeto Digital — KRONOS",
+	"author": "Marco Antonio Rojas Valdovinos <marco.a.rojas.v@hotmail.com>",
+	"license": "MIT",
+	"packageManager": "pnpm@9.0.0",
+	"engines": {
+		"node": ">=20.0.0",
+		"pnpm": ">=9.0.0"
+	},
+	"scripts": {
+		"build": "turbo run build",
+		"test": "turbo run test",
+		"lint": "biome check .",
+		"format": "biome format --write .",
+		"dev": "turbo run dev",
+		"clean": "turbo run clean && rm -rf node_modules .turbo",
+		"verify": "./provenance/verifiers/verify-provenance.sh"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^1.9.0",
+		"turbo": "^2.0.0",
+		"typescript": "^5.5.0"
+	}
 }

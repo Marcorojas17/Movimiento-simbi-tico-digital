@@ -9,3 +9,17 @@ build/
 *.pdf
 !certificate/*.pdf
 !assets/*.mp4
+
+# Turbo
+.turbo/
+apps/*/.turbo/
+packages/*/.turbo/
+
+# Builds
+apps/*/dist/
+packages/*/dist/
+apps/*/.astro/
+
+# Astro
+.astro/
+*.tsbuildinfo
