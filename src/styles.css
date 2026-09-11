@@ -1,0 +1,4 @@
+:root{--primary:#e30613;--dark:#1a1a1a;--light:#f5f5f5;--accent:#00c853}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:system-ui;background:var(--dark);color:var(--light);line-height:1.6}
+header{text-align:center;padding:4rem 1rem;background:linear-gradient(135deg,#1a1a1a,#2d2d2d);border-bottom:2px solid var(--primary)}

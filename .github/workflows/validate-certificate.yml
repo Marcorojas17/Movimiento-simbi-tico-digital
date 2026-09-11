@@ -1,0 +1,8 @@
+name: Validate Certificate Hash
+on: [push, pull_request]
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 -c "import json; print(json.load(open('certificate/idfile.json'))['sha256'])"
