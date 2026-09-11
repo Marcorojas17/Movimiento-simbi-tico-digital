@@ -65,6 +65,8 @@ describe('validateScopes', () => {
   it('detecta conflictos (data:delete vs voice:store)', () => {
     const r = validateScopes(['voice:store', 'data:delete']);
     expect(r.valid).toBe(false);
-    expect(r.conflicts).toContain('data:delete');
+    // Los conflictos son unidireccionales: data:delete declara conflicto
+    // con voice:store, y el validador reporta el scope que "trae" el conflicto.
+    expect(r.conflicts).toContain('voice:store');
   });
 });

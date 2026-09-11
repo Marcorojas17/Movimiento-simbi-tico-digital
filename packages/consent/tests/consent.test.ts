@@ -134,11 +134,29 @@ describe('ConsentChain', () => {
     });
     const rev = revokeConsent(grant, { reason: 'x', at: AT + 1, id: 'r' });
 
-    // Simular manipulación: alterar el hash del primero
+    // Simular manipulación: alterar el hash del primer registro.
+    // El validador debe rechazarlo con "own hash mismatch".
     const tampered = { ...grant, hash: 'f'.repeat(64) };
+
     const chain = new ConsentChain();
     expect(() => chain.append(tampered)).toThrow(/own hash mismatch/);
-    expect(() => chain.append(rev)).not.toThrow();
+
+    // La cadena original (con el grant sin manipular) sí debe aceptarse.
+    const cleanChain = new ConsentChain([grant, rev]);
+    expect(cleanChain.verify().valid).toBe(true);
+  });
+
+  it('rechaza append si el registro anterior no fue aceptado', () => {
+    // Si la cadena está vacía y el registro tiene previousHash !== null,
+    // el validador lo rechaza para evitar huérfanos.
+    const grant = createConsent(SUBJECT, GRANTOR, ['voice:capture'], {
+      at: AT,
+      id: 'g',
+    });
+    const rev = revokeConsent(grant, { reason: 'x', at: AT + 1, id: 'r' });
+
+    const chain = new ConsentChain();
+    expect(() => chain.append(rev)).toThrow(/first record must have previousHash=null/);
   });
 
   it('rechaza si previousHash no coincide', () => {
