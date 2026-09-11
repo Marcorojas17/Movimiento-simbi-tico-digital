@@ -1,8 +1,52 @@
-name: Validate Certificate Hash
-on: [push, pull_request]
+name: 🔍 Validate Certificate Hash
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
 jobs:
   validate:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: python3 -c "import json; print(json.load(open('certificate/idfile.json'))['sha256'])"
+        with:
+          lfs: true
+
+      - name: 🔐 Validate SHA-256 of registered file (if present)
+        run: |
+          EXPECTED="41a3683bbf83296eeb45da9b0e0ea5a7c095e78b493772e79520a92dbc39f4c3"
+          ASSET="provenance/2607086319439/original/VID-20260708-WA0038.mp4"
+          if [ ! -f "$ASSET" ]; then
+            echo "⚠️  Video no presente en provenance/. Se omite validación."
+            echo "   Cuando lo subas, este workflow validará su hash SHA-256."
+            exit 0
+          fi
+          ACTUAL=$(sha256sum "$ASSET" | awk '{print $1}')
+          if [ "$EXPECTED" != "$ACTUAL" ]; then
+            echo "❌ Hash no coincide."
+            echo "   Esperado: $EXPECTED"
+            echo "   Actual:   $ACTUAL"
+            exit 1
+          fi
+          echo "✅ Hash verificado correctamente."
+
+      - name: 📜 Validate manifest exists
+        run: |
+          test -f provenance/2607086319439/manifest.json || {
+            echo "❌ manifest.json no encontrado"
+            exit 1
+          }
+          echo "✅ Manifest OK"
+
+      - name: 🔐 Validate GPG key present
+        run: |
+          test -f .well-known/gpg-key.asc || {
+            echo "❌ gpg-key.asc no encontrado"
+            exit 1
+          }
+          echo "✅ GPG key OK"
