@@ -4,7 +4,7 @@
     "human": {
       "verdict": "human",
       "confidence": 0.9232,
-      "audioHash": "b61ed7481a888a45c9da9c72abb62b5a97ecb4fa4175f104233203447159bebb",
+      "audioHash": "aad8ba828a7309e0505a5fcb38ec8755db153d890b4d76caf5d342bd8b7fcb91",
       "auditEntryCount": 3,
       "explanation": "KRONOS confirma firma vocal humana con confianza 0.923",
       "details": [
@@ -48,7 +48,7 @@
     "abstainNoConsent": {
       "verdict": "abstain",
       "confidence": 0,
-      "audioHash": "b61ed7481a888a45c9da9c72abb62b5a97ecb4fa4175f104233203447159bebb",
+      "audioHash": "aad8ba828a7309e0505a5fcb38ec8755db153d890b4d76caf5d342bd8b7fcb91",
       "auditEntryCount": 2,
       "explanation": "KRONOS se abstiene: consent invalid: no consent record provided",
       "details": [
@@ -74,20 +74,20 @@
       "detected": true,
       "frequency": 440.08,
       "deviationHz": 0.085,
-      "confidence": 45.548
+      "confidence": 1
     },
     "bands": [
       {
         "name": "sub",
         "minHz": 20,
         "maxHz": 80,
-        "ratio": 0.0081
+        "ratio": 0.0077
       },
       {
         "name": "low",
         "minHz": 80,
         "maxHz": 250,
-        "ratio": 0.0156
+        "ratio": 0.0151
       },
       {
         "name": "mid",
@@ -105,7 +105,7 @@
         "name": "high",
         "minHz": 2000,
         "maxHz": 8000,
-        "ratio": 0.0211
+        "ratio": 0.0214
       }
     ]
   }

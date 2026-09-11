@@ -68,7 +68,8 @@ export function detectAnchor(
   for (let i = start; i <= end; i++) anchorEnergy += mag[i] * mag[i];
   anchorEnergy = Math.sqrt(anchorEnergy / (end - start + 1));
 
-  const confidence = totalEnergy > 0 ? anchorEnergy / totalEnergy : 0;
+  const rawConfidence = totalEnergy > 0 ? anchorEnergy / totalEnergy : 0;
+  const confidence = Math.max(0, Math.min(1, rawConfidence));
   const frequency = bestBin * binHz;
   const deviationHz = frequency - anchorHz;
 
