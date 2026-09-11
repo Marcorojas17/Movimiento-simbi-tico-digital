@@ -1,5 +1,10 @@
 {
-	"name": "KRONOS Dev",
-	"image": "mcr.microsoft.com/devcontainers/typescript-node:20",
-	"postCreateCommand": "corepack enable && pnpm install || true"
+  "name": "KRONOS Dev",
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:20",
+  "postCreateCommand": "corepack enable && git config --global gpg.program $(which gpg) && pnpm install || true",
+  "customizations": {
+    "vscode": {
+      "extensions": ["biomejs.biome", "astro-build.astro-vscode"]
+    }
+  }
 }
