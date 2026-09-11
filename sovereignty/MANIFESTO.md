@@ -14,31 +14,38 @@ Declaramos que es posible otra relación: **simbiosis**, no extracción.
 ## Los siete principios
 
 ### 1. Simbiosis
+
 La inteligencia artificial amplifica la creatividad humana. No la
 reemplaza. Toda obra co-creada reconoce la contribución proporcional
 de cada parte.
 
 ### 2. Respeto digital
+
 Toda obra, dato personal y expresión merece protección. El respeto es
 la base de toda interacción en el ecosistema digital.
 
 ### 3. Transparencia
+
 Los algoritmos que nos afectan deben ser auditables. La caja negra es
 incompatible con la dignidad humana.
 
 ### 4. Soberanía
+
 Cada creador es dueño de su obra y de sus datos. La cesión de derechos
 debe ser explícita, informada y revocable.
 
 ### 5. Comunidad
+
 El conocimiento se comparte para el bien común. La colaboración abierta
 es el motor de la innovación sostenible.
 
 ### 6. Justicia
+
 Los beneficios de la co-creación se distribuyen equitativamente entre
 todos los participantes, humanos y sistemas.
 
 ### 7. Sostenibilidad
+
 El desarrollo tecnológico debe ser sostenible ambiental, social y
 económicamente.
 
@@ -59,25 +66,32 @@ económicamente.
 ## Principios operativos
 
 ### P-01 — Integridad sobre conveniencia
+
 Preferimos un proceso lento y verificable a uno rápido y opaco.
 
 ### P-02 — Abstención sobre veredicto falso
+
 Si no podemos afirmar algo con confianza, nos abstenemos.
 
 ### P-03 — Publicación sobre ocultamiento
+
 Los límites, errores y vulnerabilidades se publican.
 
 ### P-04 — Reversibilidad sobre bloqueo
+
 Cada consentimiento es revocable. Cada decisión es auditable.
 
 ### P-05 — Multiplicidad sobre dependencia
+
 La prueba legal vive en tres lugares: Safe Creative, GitHub, Ethereum.
 
 ### P-06 — Educación sobre secreto
+
 El código es MIT. Las decisiones están documentadas. Los tests son
 públicos. Cualquiera puede replicar el sistema.
 
 ### P-07 — Consentimiento explícito sobre inferencia
+
 No inferimos permiso. Lo pedimos explícitamente.
 
 ---
