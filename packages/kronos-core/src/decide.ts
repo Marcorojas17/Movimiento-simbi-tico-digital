@@ -1,4 +1,4 @@
-import type { ConfidenceFactors, Decision } from './types.js';
+import type { Decision } from './types.js';
 import { shouldAbstain, type AbstainInput } from './abstain.js';
 
 /**
