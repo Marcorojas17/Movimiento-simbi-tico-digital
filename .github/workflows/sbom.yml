@@ -14,18 +14,31 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: pnpm/action-setup@v4
-        with:
-          version: 9
       - uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: 'pnpm'
       - name: Install dependencies
         run: pnpm install --no-frozen-lockfile
-      - name: Generate SBOM (best effort)
+      - name: Generate SBOM (placeholder)
         run: |
-          echo '{"bomFormat":"CycloneDX","specVersion":"1.5","version":1,"metadata":{"component":{"name":"movimiento-co-creatividad-simbiotica","version":"0.3.0"}},"components":[]}' > sbom.json
-          echo "✅ Placeholder SBOM generado"
+          cat > sbom.json << 'EOF'
+          {
+            "bomFormat": "CycloneDX",
+            "specVersion": "1.5",
+            "version": 1,
+            "metadata": {
+              "component": {
+                "name": "movimiento-co-creatividad-simbiotica",
+                "version": "0.3.0",
+                "description": "Movimiento de Co-Creatividad Simbiótica y Respeto Digital — KRONOS"
+              },
+              "timestamp": "2026-09-11T00:00:00Z"
+            },
+            "components": []
+          }
+          EOF
+          echo "✅ SBOM placeholder generado"
           cat sbom.json
       - name: Upload artifact
         uses: actions/upload-artifact@v4
