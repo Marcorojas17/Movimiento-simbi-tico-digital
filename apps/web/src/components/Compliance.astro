@@ -1,0 +1,25 @@
+---
+const norms = [
+  { id: 'NOM-151-SCFI-2016', desc: 'Conservación de mensajes de datos.', status: 'Cumplido' },
+  { id: 'LFPDPPP art. 7', desc: 'Consentimiento en lengua materna.', status: 'Cumplido' },
+  { id: 'GDPR art. 7', desc: 'Consentimiento libre, específico, informado, revocable.', status: 'Cumplido' },
+  { id: 'ISO/IEC 27001', desc: 'Sistema de Gestión de Seguridad de la Información.', status: 'En proceso' },
+];
+---
+
+<section class="compliance" id="compliance">
+  <h2 class="compliance__title">Cumplimiento</h2>
+  <ul class="compliance__list">
+    {norms.map((n) => (
+      <li class="compliance__item">
+        <div class="compliance__item-head">
+          <strong class="compliance__id">{n.id}</strong>
+          <span class={`compliance__status compliance__status--${n.status === 'Cumplido' ? 'ok' : 'progress'}`}>
+            {n.status}
+          </span>
+        </div>
+        <p class="compliance__desc">{n.desc}</p>
+      </li>
+    ))}
+  </ul>
+</section>

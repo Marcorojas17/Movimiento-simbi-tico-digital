@@ -1,0 +1,25 @@
+---
+const steps = [
+  { n: '01', t: 'Captura', d: 'Valida formato y duración mínima (500 ms).' },
+  { n: '02', t: 'Hash', d: 'SHA-256 del buffer de audio para trazabilidad.' },
+  { n: '03', t: 'Consentimiento', d: 'Verifica scopes voice:capture + voice:analyze.' },
+  { n: '04', t: 'Análisis cimático', d: 'FFT radix-2, detección de ancla 440 Hz, bandas.' },
+  { n: '05', t: 'Confianza', d: 'Score ponderado (ancla 45%, energía 20%, duración 15%, consent. 20%).' },
+  { n: '06', t: 'Decisión', d: 'humano si confianza ≥ umbral; si no, abstención honesta.' },
+  { n: '07', t: 'Explicación', d: 'Detalle de factores y umbral usado.' },
+  { n: '08', t: 'Auditoría', d: 'Cada paso se registra en cadena de hashes inmutable.' },
+];
+---
+
+<section class="flow" id="como-funciona">
+  <h2 class="flow__title">Cómo funciona</h2>
+  <ol class="flow__list">
+    {steps.map((s) => (
+      <li class="flow__step">
+        <span class="flow__step-n">{s.n}</span>
+        <h3 class="flow__step-title">{s.t}</h3>
+        <p class="flow__step-desc">{s.d}</p>
+      </li>
+    ))}
+  </ol>
+</section>

@@ -1,0 +1,47 @@
+---
+const can = [
+  'Detectar la presencia del ancla 440 Hz con FFT radix-2.',
+  'Analizar distribución energética por bandas espectrales.',
+  'Verificar consentimiento explícito por scope.',
+  'Registrar cada decisión en cadena de auditoría inmutable.',
+  'Abstenerse cuando la confianza es insuficiente.',
+];
+
+const cannot = [
+  'Distinguir con certeza una voz humana de una clonada por IA en todos los casos.',
+  'Identificar al hablante (no somos biometría de identificación).',
+  'Analizar grabaciones menores a 500 ms.',
+  'Funcionar sin consentimiento explícito del titular.',
+  'Reemplazar un peritaje forense humano.',
+];
+
+const willNot = [
+  'Emitir veredicto "ai" sin consentimiento explícito y confianza muy alta.',
+  'Almacenar audio crudo sin orden explícita del titular.',
+  'Compartir datos con terceros sin scope voice:share.',
+  'Operar sobre voces de menores sin tutor legal.',
+];
+---
+
+<section class="limits" id="limites">
+  <h2 class="limits__title">Límites explícitos</h2>
+  <p class="limits__lead">
+    Publicamos lo que KRONOS <b>no</b> puede hacer. La honestidad
+    epistémica es parte del diseño.
+  </p>
+
+  <div class="limits__grid">
+    <div class="limits__col limits__col--can">
+      <h3>Puede</h3>
+      <ul>{can.map((x) => <li>{x}</li>)}</ul>
+    </div>
+    <div class="limits__col limits__col--cannot">
+      <h3>No puede</h3>
+      <ul>{cannot.map((x) => <li>{x}</li>)}</ul>
+    </div>
+    <div class="limits__col limits__col--willnot">
+      <h3>No hará</h3>
+      <ul>{willNot.map((x) => <li>{x}</li>)}</ul>
+    </div>
+  </div>
+</section>

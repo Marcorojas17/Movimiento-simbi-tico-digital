@@ -1,0 +1,112 @@
+{
+  "generatedAt": "2023-11-14T22:13:20.000Z",
+  "scenarios": {
+    "human": {
+      "verdict": "human",
+      "confidence": 0.9232,
+      "audioHash": "b61ed7481a888a45c9da9c72abb62b5a97ecb4fa4175f104233203447159bebb",
+      "auditEntryCount": 3,
+      "explanation": "KRONOS confirma firma vocal humana con confianza 0.923",
+      "details": [
+        "anchorScore: 1.000 (peso 45%)",
+        "energyScore: 0.991 (peso 20%)",
+        "durationScore: 0.500 (peso 15%)",
+        "consentScore: 1.000 (peso 20%)"
+      ],
+      "factors": {
+        "anchorScore": 1,
+        "energyScore": 0.9909,
+        "durationScore": 0.5,
+        "consentScore": 1
+      },
+      "reason": "anchor=1.000, consent=1.000, confidence=0.923",
+      "threshold": 0.65,
+      "anchorDetected": true
+    },
+    "abstainNoAnchor": {
+      "verdict": "abstain",
+      "confidence": 0.3915,
+      "audioHash": "06fc71a670c8bc1522a745f9f0fa8ccb0511a3cb8a5aa7eecaaca599aeab4d03",
+      "auditEntryCount": 3,
+      "explanation": "KRONOS se abstiene: confidence 0.392 < threshold 0.650",
+      "details": [
+        "anchorScore: 0.257 (peso 45%)",
+        "energyScore: 0.004 (peso 20%)",
+        "durationScore: 0.500 (peso 15%)",
+        "consentScore: 1.000 (peso 20%)"
+      ],
+      "factors": {
+        "anchorScore": 0.2572,
+        "energyScore": 0.004,
+        "durationScore": 0.5,
+        "consentScore": 1
+      },
+      "reason": "confidence 0.392 < threshold 0.650",
+      "threshold": 0.65,
+      "anchorDetected": true
+    },
+    "abstainNoConsent": {
+      "verdict": "abstain",
+      "confidence": 0,
+      "audioHash": "b61ed7481a888a45c9da9c72abb62b5a97ecb4fa4175f104233203447159bebb",
+      "auditEntryCount": 2,
+      "explanation": "KRONOS se abstiene: consent invalid: no consent record provided",
+      "details": [
+        "anchorScore: 1.000 (peso 45%)",
+        "energyScore: 0.991 (peso 20%)",
+        "durationScore: 0.500 (peso 15%)",
+        "consentScore: 0.000 (peso 20%)"
+      ],
+      "factors": {
+        "anchorScore": 1,
+        "energyScore": 0.9909,
+        "durationScore": 0.5,
+        "consentScore": 0
+      },
+      "reason": "consent invalid: no consent record provided",
+      "threshold": 0.65,
+      "anchorDetected": true
+    }
+  },
+  "cymatic": {
+    "patternSvg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 240 240\" width=\"240\" height=\"240\">\n<rect width=\"240\" height=\"240\" fill=\"#0a0a0a\"/>\n<g><circle cx=\"30.00\" cy=\"30.00\" r=\"0.81\" fill=\"#00c853\" opacity=\"0.081\"/><circle cx=\"50.00\" cy=\"30.00\" r=\"1.55\" fill=\"#00c853\" opacity=\"0.155\"/><circle cx=\"70.00\" cy=\"30.00\" r=\"2.17\" fill=\"#00c853\" opacity=\"0.217\"/><circle cx=\"90.00\" cy=\"30.00\" r=\"2.62\" fill=\"#00c853\" opacity=\"0.262\"/><circle cx=\"110.00\" cy=\"30.00\" r=\"2.85\" fill=\"#00c853\" opacity=\"0.285\"/><circle cx=\"130.00\" cy=\"30.00\" r=\"2.85\" fill=\"#00c853\" opacity=\"0.285\"/><circle cx=\"150.00\" cy=\"30.00\" r=\"2.62\" fill=\"#00c853\" opacity=\"0.262\"/><circle cx=\"170.00\" cy=\"30.00\" r=\"2.17\" fill=\"#00c853\" opacity=\"0.217\"/><circle cx=\"190.00\" cy=\"30.00\" r=\"1.55\" fill=\"#00c853\" opacity=\"0.155\"/><circle cx=\"210.00\" cy=\"30.00\" r=\"0.81\" fill=\"#00c853\" opacity=\"0.081\"/><circle cx=\"30.00\" cy=\"50.00\" r=\"1.55\" fill=\"#00c853\" opacity=\"0.155\"/><circle cx=\"50.00\" cy=\"50.00\" r=\"2.98\" fill=\"#00c853\" opacity=\"0.298\"/><circle cx=\"70.00\" cy=\"50.00\" r=\"4.17\" fill=\"#00c853\" opacity=\"0.417\"/><circle cx=\"90.00\" cy=\"50.00\" r=\"5.02\" fill=\"#00c853\" opacity=\"0.502\"/><circle cx=\"110.00\" cy=\"50.00\" r=\"5.46\" fill=\"#00c853\" opacity=\"0.546\"/><circle cx=\"130.00\" cy=\"50.00\" r=\"5.46\" fill=\"#00c853\" opacity=\"0.546\"/><circle cx=\"150.00\" cy=\"50.00\" r=\"5.02\" fill=\"#00c853\" opacity=\"0.502\"/><circle cx=\"170.00\" cy=\"50.00\" r=\"4.17\" fill=\"#00c853\" opacity=\"0.417\"/><circle cx=\"190.00\" cy=\"50.00\" r=\"2.98\" fill=\"#00c853\" opacity=\"0.298\"/><circle cx=\"210.00\" cy=\"50.00\" r=\"1.55\" fill=\"#00c853\" opacity=\"0.155\"/><circle cx=\"30.00\" cy=\"70.00\" r=\"2.17\" fill=\"#00c853\" opacity=\"0.217\"/><circle cx=\"50.00\" cy=\"70.00\" r=\"4.17\" fill=\"#00c853\" opacity=\"0.417\"/><circle cx=\"70.00\" cy=\"70.00\" r=\"5.83\" fill=\"#00c853\" opacity=\"0.583\"/><circle cx=\"90.00\" cy=\"70.00\" r=\"7.02\" fill=\"#00c853\" opacity=\"0.702\"/><circle cx=\"110.00\" cy=\"70.00\" r=\"7.64\" fill=\"#00c853\" opacity=\"0.764\"/><circle cx=\"130.00\" cy=\"70.00\" r=\"7.64\" fill=\"#00c853\" opacity=\"0.764\"/><circle cx=\"150.00\" cy=\"70.00\" r=\"7.02\" fill=\"#00c853\" opacity=\"0.702\"/><circle cx=\"170.00\" cy=\"70.00\" r=\"5.83\" fill=\"#00c853\" opacity=\"0.583\"/><circle cx=\"190.00\" cy=\"70.00\" r=\"4.17\" fill=\"#00c853\" opacity=\"0.417\"/><circle cx=\"210.00\" cy=\"70.00\" r=\"2.17\" fill=\"#00c853\" opacity=\"0.217\"/><circle cx=\"30.00\" cy=\"90.00\" r=\"2.62\" fill=\"#00c853\" opacity=\"0.262\"/><circle cx=\"50.00\" cy=\"90.00\" r=\"5.02\" fill=\"#00c853\" opacity=\"0.502\"/><circle cx=\"70.00\" cy=\"90.00\" r=\"7.02\" fill=\"#00c853\" opacity=\"0.702\"/><circle cx=\"90.00\" cy=\"90.00\" r=\"8.45\" fill=\"#00c853\" opacity=\"0.845\"/><circle cx=\"110.00\" cy=\"90.00\" r=\"9.19\" fill=\"#00c853\" opacity=\"0.919\"/><circle cx=\"130.00\" cy=\"90.00\" r=\"9.19\" fill=\"#00c853\" opacity=\"0.919\"/><circle cx=\"150.00\" cy=\"90.00\" r=\"8.45\" fill=\"#00c853\" opacity=\"0.845\"/><circle cx=\"170.00\" cy=\"90.00\" r=\"7.02\" fill=\"#00c853\" opacity=\"0.702\"/><circle cx=\"190.00\" cy=\"90.00\" r=\"5.02\" fill=\"#00c853\" opacity=\"0.502\"/><circle cx=\"210.00\" cy=\"90.00\" r=\"2.62\" fill=\"#00c853\" opacity=\"0.262\"/><circle cx=\"30.00\" cy=\"110.00\" r=\"2.85\" fill=\"#00c853\" opacity=\"0.285\"/><circle cx=\"50.00\" cy=\"110.00\" r=\"5.46\" fill=\"#00c853\" opacity=\"0.546\"/><circle cx=\"70.00\" cy=\"110.00\" r=\"7.64\" fill=\"#00c853\" opacity=\"0.764\"/><circle cx=\"90.00\" cy=\"110.00\" r=\"9.19\" fill=\"#00c853\" opacity=\"0.919\"/><circle cx=\"110.00\" cy=\"110.00\" r=\"10.00\" fill=\"#00c853\" opacity=\"1.000\"/><circle cx=\"130.00\" cy=\"110.00\" r=\"10.00\" fill=\"#00c853\" opacity=\"1.000\"/><circle cx=\"150.00\" cy=\"110.00\" r=\"9.19\" fill=\"#00c853\" opacity=\"0.919\"/><circle cx=\"170.00\" cy=\"110.00\" r=\"7.64\" fill=\"#00c853\" opacity=\"0.764\"/><circle cx=\"190.00\" cy=\"110.00\" r=\"5.46\" fill=\"#00c853\" opacity=\"0.546\"/><circle cx=\"210.00\" cy=\"110.00\" r=\"2.85\" fill=\"#00c853\" opacity=\"0.285\"/><circle cx=\"30.00\" cy=\"130.00\" r=\"2.85\" fill=\"#00c853\" opacity=\"0.285\"/><circle cx=\"50.00\" cy=\"130.00\" r=\"5.46\" fill=\"#00c853\" opacity=\"0.546\"/><circle cx=\"70.00\" cy=\"130.00\" r=\"7.64\" fill=\"#00c853\" opacity=\"0.764\"/><circle cx=\"90.00\" cy=\"130.00\" r=\"9.19\" fill=\"#00c853\" opacity=\"0.919\"/><circle cx=\"110.00\" cy=\"130.00\" r=\"10.00\" fill=\"#00c853\" opacity=\"1.000\"/><circle cx=\"130.00\" cy=\"130.00\" r=\"10.00\" fill=\"#00c853\" opacity=\"1.000\"/><circle cx=\"150.00\" cy=\"130.00\" r=\"9.19\" fill=\"#00c853\" opacity=\"0.919\"/><circle cx=\"170.00\" cy=\"130.00\" r=\"7.64\" fill=\"#00c853\" opacity=\"0.764\"/><circle cx=\"190.00\" cy=\"130.00\" r=\"5.46\" fill=\"#00c853\" opacity=\"0.546\"/><circle cx=\"210.00\" cy=\"130.00\" r=\"2.85\" fill=\"#00c853\" opacity=\"0.285\"/><circle cx=\"30.00\" cy=\"150.00\" r=\"2.62\" fill=\"#00c853\" opacity=\"0.262\"/><circle cx=\"50.00\" cy=\"150.00\" r=\"5.02\" fill=\"#00c853\" opacity=\"0.502\"/><circle cx=\"70.00\" cy=\"150.00\" r=\"7.02\" fill=\"#00c853\" opacity=\"0.702\"/><circle cx=\"90.00\" cy=\"150.00\" r=\"8.45\" fill=\"#00c853\" opacity=\"0.845\"/><circle cx=\"110.00\" cy=\"150.00\" r=\"9.19\" fill=\"#00c853\" opacity=\"0.919\"/><circle cx=\"130.00\" cy=\"150.00\" r=\"9.19\" fill=\"#00c853\" opacity=\"0.919\"/><circle cx=\"150.00\" cy=\"150.00\" r=\"8.45\" fill=\"#00c853\" opacity=\"0.845\"/><circle cx=\"170.00\" cy=\"150.00\" r=\"7.02\" fill=\"#00c853\" opacity=\"0.702\"/><circle cx=\"190.00\" cy=\"150.00\" r=\"5.02\" fill=\"#00c853\" opacity=\"0.502\"/><circle cx=\"210.00\" cy=\"150.00\" r=\"2.62\" fill=\"#00c853\" opacity=\"0.262\"/><circle cx=\"30.00\" cy=\"170.00\" r=\"2.17\" fill=\"#00c853\" opacity=\"0.217\"/><circle cx=\"50.00\" cy=\"170.00\" r=\"4.17\" fill=\"#00c853\" opacity=\"0.417\"/><circle cx=\"70.00\" cy=\"170.00\" r=\"5.83\" fill=\"#00c853\" opacity=\"0.583\"/><circle cx=\"90.00\" cy=\"170.00\" r=\"7.02\" fill=\"#00c853\" opacity=\"0.702\"/><circle cx=\"110.00\" cy=\"170.00\" r=\"7.64\" fill=\"#00c853\" opacity=\"0.764\"/><circle cx=\"130.00\" cy=\"170.00\" r=\"7.64\" fill=\"#00c853\" opacity=\"0.764\"/><circle cx=\"150.00\" cy=\"170.00\" r=\"7.02\" fill=\"#00c853\" opacity=\"0.702\"/><circle cx=\"170.00\" cy=\"170.00\" r=\"5.83\" fill=\"#00c853\" opacity=\"0.583\"/><circle cx=\"190.00\" cy=\"170.00\" r=\"4.17\" fill=\"#00c853\" opacity=\"0.417\"/><circle cx=\"210.00\" cy=\"170.00\" r=\"2.17\" fill=\"#00c853\" opacity=\"0.217\"/><circle cx=\"30.00\" cy=\"190.00\" r=\"1.55\" fill=\"#00c853\" opacity=\"0.155\"/><circle cx=\"50.00\" cy=\"190.00\" r=\"2.98\" fill=\"#00c853\" opacity=\"0.298\"/><circle cx=\"70.00\" cy=\"190.00\" r=\"4.17\" fill=\"#00c853\" opacity=\"0.417\"/><circle cx=\"90.00\" cy=\"190.00\" r=\"5.02\" fill=\"#00c853\" opacity=\"0.502\"/><circle cx=\"110.00\" cy=\"190.00\" r=\"5.46\" fill=\"#00c853\" opacity=\"0.546\"/><circle cx=\"130.00\" cy=\"190.00\" r=\"5.46\" fill=\"#00c853\" opacity=\"0.546\"/><circle cx=\"150.00\" cy=\"190.00\" r=\"5.02\" fill=\"#00c853\" opacity=\"0.502\"/><circle cx=\"170.00\" cy=\"190.00\" r=\"4.17\" fill=\"#00c853\" opacity=\"0.417\"/><circle cx=\"190.00\" cy=\"190.00\" r=\"2.98\" fill=\"#00c853\" opacity=\"0.298\"/><circle cx=\"210.00\" cy=\"190.00\" r=\"1.55\" fill=\"#00c853\" opacity=\"0.155\"/><circle cx=\"30.00\" cy=\"210.00\" r=\"0.81\" fill=\"#00c853\" opacity=\"0.081\"/><circle cx=\"50.00\" cy=\"210.00\" r=\"1.55\" fill=\"#00c853\" opacity=\"0.155\"/><circle cx=\"70.00\" cy=\"210.00\" r=\"2.17\" fill=\"#00c853\" opacity=\"0.217\"/><circle cx=\"90.00\" cy=\"210.00\" r=\"2.62\" fill=\"#00c853\" opacity=\"0.262\"/><circle cx=\"110.00\" cy=\"210.00\" r=\"2.85\" fill=\"#00c853\" opacity=\"0.285\"/><circle cx=\"130.00\" cy=\"210.00\" r=\"2.85\" fill=\"#00c853\" opacity=\"0.285\"/><circle cx=\"150.00\" cy=\"210.00\" r=\"2.62\" fill=\"#00c853\" opacity=\"0.262\"/><circle cx=\"170.00\" cy=\"210.00\" r=\"2.17\" fill=\"#00c853\" opacity=\"0.217\"/><circle cx=\"190.00\" cy=\"210.00\" r=\"1.55\" fill=\"#00c853\" opacity=\"0.155\"/><circle cx=\"210.00\" cy=\"210.00\" r=\"0.81\" fill=\"#00c853\" opacity=\"0.081\"/></g>\n<title>Cymatic pattern 440.00 Hz</title>\n</svg>",
+    "anchor": {
+      "detected": true,
+      "frequency": 440.08,
+      "deviationHz": 0.085,
+      "confidence": 45.548
+    },
+    "bands": [
+      {
+        "name": "sub",
+        "minHz": 20,
+        "maxHz": 80,
+        "ratio": 0.0081
+      },
+      {
+        "name": "low",
+        "minHz": 80,
+        "maxHz": 250,
+        "ratio": 0.0156
+      },
+      {
+        "name": "mid",
+        "minHz": 250,
+        "maxHz": 2000,
+        "ratio": 0.9991
+      },
+      {
+        "name": "anchor",
+        "minHz": 435,
+        "maxHz": 445,
+        "ratio": 0.9909
+      },
+      {
+        "name": "high",
+        "minHz": 2000,
+        "maxHz": 8000,
+        "ratio": 0.0211
+      }
+    ]
+  }
+}

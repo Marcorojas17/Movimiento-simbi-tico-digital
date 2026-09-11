@@ -1,0 +1,44 @@
+---
+import fixtures from '../data/fixtures.json';
+
+const { patternSvg, anchor, bands } = fixtures.cymatic;
+const maxRatio = Math.max(...bands.map((b) => b.ratio), 0.0001);
+---
+
+<section class="cymatic" id="cymatic">
+  <div class="cymatic__intro">
+    <h2 class="cymatic__title">Ancla cimática 440 Hz</h2>
+    <p class="cymatic__lead">
+      KRONOS usa 440&nbsp;Hz (ISO&nbsp;16:1975, A4) como firma espectral
+      determinista. La presencia, energía y desviación del ancla son
+      la base del análisis vocal.
+    </p>
+
+    <dl class="cymatic__stats">
+      <div><dt>Detectada</dt><dd>{anchor.detected ? 'sí' : 'no'}</dd></div>
+      <div><dt>Frecuencia</dt><dd>{anchor.frequency} Hz</dd></div>
+      <div><dt>Desviación</dt><dd>{anchor.deviationHz} Hz</dd></div>
+      <div><dt>Confianza</dt><dd>{(anchor.confidence * 100).toFixed(1)}%</dd></div>
+    </dl>
+  </div>
+
+  <div class="cymatic__visuals">
+    <div class="cymatic__pattern" set:html={patternSvg} />
+
+    <ul class="cymatic__bands">
+      {bands.map((b) => (
+        <li class="cymatic__band">
+          <span class="cymatic__band-name">{b.name}</span>
+          <span class="cymatic__band-range">{b.minHz}–{b.maxHz} Hz</span>
+          <span class="cymatic__band-bar">
+            <span
+              class="cymatic__band-fill"
+              style={`width:${((b.ratio / maxRatio) * 100).toFixed(1)}%`}
+            ></span>
+          </span>
+          <span class="cymatic__band-value">{(b.ratio * 100).toFixed(2)}%</span>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>

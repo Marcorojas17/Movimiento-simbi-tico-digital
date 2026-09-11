@@ -1,0 +1,36 @@
+---
+const {
+  acta = '2607086319439',
+  sha256 = '41a3683bbf83296eeb45da9b0e0ea5a7c095e78b493772e79520a92dbc39f4c3',
+  etherscan = 'https://etherscan.io/tx/0x8ca8e84e1258abac9acb29d14d25114e4775d782ecfda51ae29933247ed2970e',
+} = Astro.props;
+---
+
+<section class="hero">
+  <div class="hero__badge">VERIFIED</div>
+  <h1 class="hero__title">
+    <span class="hero__title-line">Co-Creatividad</span>
+    <span class="hero__title-line hero__title-line--accent">Simbiótica</span>
+    <span class="hero__title-line">&amp; Respeto Digital</span>
+  </h1>
+  <p class="hero__subtitle">
+    KRONOS verifica autenticidad vocal con ancla cimática de 440&nbsp;Hz,
+    consentimiento explícito y cadena de auditoría NOM-151.
+    Se abstiene antes que mentir.
+  </p>
+
+  <div class="hero__meta">
+    <div class="hero__meta-item">
+      <span class="hero__meta-label">Acta</span>
+      <code class="hero__meta-value">{acta}</code>
+    </div>
+    <div class="hero__meta-item">
+      <span class="hero__meta-label">SHA-256</span>
+      <code class="hero__meta-value">{sha256.slice(0, 16)}…</code>
+    </div>
+    <div class="hero__meta-item">
+      <span class="hero__meta-label">Blockchain</span>
+      <a href={etherscan} class="hero__meta-value hero__meta-value--link" target="_blank" rel="noopener">Ethereum</a>
+    </div>
+  </div>
+</section>

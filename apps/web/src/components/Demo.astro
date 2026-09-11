@@ -1,0 +1,63 @@
+---
+import fixtures from '../data/fixtures.json';
+
+const scenarios = [
+  { id: 'human', label: 'Señal 440 Hz + consentimiento', data: fixtures.scenarios.human, tone: 'ok' },
+  { id: 'abstainNoAnchor', label: 'Señal 300 Hz (sin ancla)', data: fixtures.scenarios.abstainNoAnchor, tone: 'warn' },
+  { id: 'abstainNoConsent', label: 'Sin consentimiento', data: fixtures.scenarios.abstainNoConsent, tone: 'warn' },
+];
+
+function pct(x) {
+  return (x * 100).toFixed(1) + '%';
+}
+
+function barWidth(x) {
+  return Math.max(0, Math.min(100, x * 100)) + '%';
+}
+---
+
+<section class="demo" id="demo">
+  <h2 class="demo__title">Demo — Pipeline ejecutado en build-time</h2>
+  <p class="demo__lead">
+    Estos resultados no son maquetas. Se generan ejecutando
+    <code>@kronos/kronos-core</code> sobre señales sintéticas cada vez
+    que se construye este sitio.
+  </p>
+
+  <div class="demo__grid">
+    {scenarios.map((s) => (
+      <article class={`demo__card demo__card--${s.tone}`}>
+        <header class="demo__card-header">
+          <span class={`demo__verdict demo__verdict--${s.data.verdict}`}>{s.data.verdict}</span>
+          <span class="demo__scenario">{s.label}</span>
+        </header>
+
+        <div class="demo__confidence">
+          <div class="demo__confidence-label">Confianza</div>
+          <div class="demo__confidence-bar">
+            <div class="demo__confidence-fill" style={`width:${barWidth(s.data.confidence)}`}></div>
+          </div>
+          <div class="demo__confidence-value">{pct(s.data.confidence)}</div>
+        </div>
+
+        <ul class="demo__factors">
+          <li><span>Ancla 440</span><b>{pct(s.data.factors.anchorScore)}</b></li>
+          <li><span>Energía</span><b>{pct(s.data.factors.energyScore)}</b></li>
+          <li><span>Duración</span><b>{pct(s.data.factors.durationScore)}</b></li>
+          <li><span>Consent.</span><b>{pct(s.data.factors.consentScore)}</b></li>
+        </ul>
+
+        <p class="demo__reason">{s.data.reason}</p>
+
+        <footer class="demo__card-footer">
+          <code class="demo__hash" title={s.data.audioHash}>{s.data.audioHash.slice(0, 20)}…</code>
+          <span class="demo__audit">{s.data.auditEntryCount} entradas de auditoría</span>
+        </footer>
+      </article>
+    ))}
+  </div>
+
+  <p class="demo__generated">
+    Fixtures generados: <code>{fixtures.generatedAt}</code>
+  </p>
+</section>

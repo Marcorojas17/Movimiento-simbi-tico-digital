@@ -1,15 +1,20 @@
 {
-	"name": "@kronos/web",
-	"version": "0.1.0",
-	"private": true,
-	"type": "module",
-	"scripts": {
-		"dev": "astro dev",
-		"build": "astro build",
-		"preview": "astro preview",
-		"clean": "rm -rf dist .astro"
-	},
-	"dependencies": {
-		"astro": "^4.15.0"
-	}
+  "name": "@kronos/web",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "fixtures": "node scripts/generate-fixtures.mjs",
+    "dev": "pnpm fixtures && astro dev",
+    "build": "pnpm fixtures && astro build",
+    "preview": "astro preview",
+    "clean": "rm -rf dist .astro src/data/fixtures.json"
+  },
+  "dependencies": {
+    "@kronos/audit": "workspace:*",
+    "@kronos/consent": "workspace:*",
+    "@kronos/cymatic-440": "workspace:*",
+    "@kronos/kronos-core": "workspace:*",
+    "astro": "^4.15.0"
+  }
 }

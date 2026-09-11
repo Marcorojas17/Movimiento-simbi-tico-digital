@@ -1,10 +1,15 @@
 ---
-const title = "Movimiento de Co-Creatividad Simbiótica y Respeto Digital";
-const acta = "2607086319439";
-const sha256 =
-	"41a3683bbf83296eeb45da9b0e0ea5a7c095e78b493772e79520a92dbc39f4c3";
-const etherscan =
-	"https://etherscan.io/tx/0x8ca8e84e1258abac9acb29d14d25114e4775d782ecfda51ae29933247ed2970e";
+import Hero from '../components/Hero.astro';
+import Demo from '../components/Demo.astro';
+import Cymatic from '../components/Cymatic.astro';
+import ComoFunciona from '../components/ComoFunciona.astro';
+import Limites from '../components/Limites.astro';
+import Compliance from '../components/Compliance.astro';
+import Footer from '../components/Footer.astro';
+
+const title = 'KRONOS — Co-Creatividad Simbiótica y Respeto Digital';
+const description =
+  'Verificador de autenticidad vocal con ancla cimática 440 Hz, consentimiento explícito y auditoría NOM-151. Abstención honesta por diseño.';
 ---
 
 <!DOCTYPE html>
@@ -13,17 +18,47 @@ const etherscan =
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{title}</title>
-  <meta name="description" content="Acta Fundacional registrada en Safe Creative 2607086319439 y anclada en Ethereum." />
+  <meta name="description" content={description} />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌱</text></svg>" />
+  <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
+  <nav class="topnav">
+    <a href="#demo">Demo</a>
+    <a href="#cymatic">Cimática</a>
+    <a href="#como-funciona">Pipeline</a>
+    <a href="#limites">Límites</a>
+    <a href="#compliance">Compliance</a>
+  </nav>
+
   <main>
-    <h1>{title}</h1>
-    <p>Acta Fundacional: <strong>{acta}</strong></p>
-    <p>SHA-256: <code>{sha256}</code></p>
-    <p>
-      <a href="https://www.safecreative.org/certificate">Certificado</a> ·
-      <a href={etherscan}>Ethereum</a>
-    </p>
+    <Hero />
+    <Demo />
+    <Cymatic />
+    <ComoFunciona />
+    <Limites />
+    <Compliance />
   </main>
+
+  <Footer />
+
+  <script is:inline>
+    // Copiar código al portapapeles al hacer clic
+    document.querySelectorAll('code').forEach((el) => {
+      el.style.cursor = 'pointer';
+      el.title = 'Clic para copiar';
+      el.addEventListener('click', () => {
+        const text = el.textContent?.trim() ?? '';
+        navigator.clipboard.writeText(text).then(() => {
+          const original = el.textContent;
+          el.textContent = '✅ Copiado';
+          setTimeout(() => { el.textContent = original; }, 1200);
+        });
+      });
+    });
+  </script>
 </body>
 </html>
