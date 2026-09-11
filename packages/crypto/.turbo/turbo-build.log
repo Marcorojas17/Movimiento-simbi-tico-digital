@@ -1,0 +1,81 @@
+
+> @kronos/crypto@0.1.0 build /workspaces/Movimiento-simbi-tico-digital/packages/crypto
+> tsc
+
+[96msrc/aes.ts[0m:[93m1[0m:[93m63[0m - [91merror[0m[90m TS2307: [0mCannot find module 'node:crypto' or its corresponding type declarations.
+
+[7m1[0m import { createCipheriv, createDecipheriv, randomBytes } from 'node:crypto';
+[7m [0m [91m                                                              ~~~~~~~~~~~~~[0m
+
+[96msrc/aes.ts[0m:[93m7[0m:[93m36[0m - [91merror[0m[90m TS2580: [0mCannot find name 'Buffer'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node`.
+
+[7m7[0m export function encrypt(plaintext: Buffer, key: Buffer): Buffer {
+[7m [0m [91m                                   ~~~~~~[0m
+
+[96msrc/aes.ts[0m:[93m7[0m:[93m49[0m - [91merror[0m[90m TS2580: [0mCannot find name 'Buffer'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node`.
+
+[7m7[0m export function encrypt(plaintext: Buffer, key: Buffer): Buffer {
+[7m [0m [91m                                                ~~~~~~[0m
+
+[96msrc/aes.ts[0m:[93m7[0m:[93m58[0m - [91merror[0m[90m TS2580: [0mCannot find name 'Buffer'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node`.
+
+[7m7[0m export function encrypt(plaintext: Buffer, key: Buffer): Buffer {
+[7m [0m [91m                                                         ~~~~~~[0m
+
+[96msrc/aes.ts[0m:[93m11[0m:[93m21[0m - [91merror[0m[90m TS2580: [0mCannot find name 'Buffer'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node`.
+
+[7m11[0m   const encrypted = Buffer.concat([cipher.update(plaintext), cipher.final()]);
+[7m  [0m [91m                    ~~~~~~[0m
+
+[96msrc/aes.ts[0m:[93m13[0m:[93m10[0m - [91merror[0m[90m TS2580: [0mCannot find name 'Buffer'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node`.
+
+[7m13[0m   return Buffer.concat([iv, tag, encrypted]);
+[7m  [0m [91m         ~~~~~~[0m
+
+[96msrc/aes.ts[0m:[93m16[0m:[93m34[0m - [91merror[0m[90m TS2580: [0mCannot find name 'Buffer'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node`.
+
+[7m16[0m export function decrypt(payload: Buffer, key: Buffer): Buffer {
+[7m  [0m [91m                                 ~~~~~~[0m
+
+[96msrc/aes.ts[0m:[93m16[0m:[93m47[0m - [91merror[0m[90m TS2580: [0mCannot find name 'Buffer'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node`.
+
+[7m16[0m export function decrypt(payload: Buffer, key: Buffer): Buffer {
+[7m  [0m [91m                                              ~~~~~~[0m
+
+[96msrc/aes.ts[0m:[93m16[0m:[93m56[0m - [91merror[0m[90m TS2580: [0mCannot find name 'Buffer'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node`.
+
+[7m16[0m export function decrypt(payload: Buffer, key: Buffer): Buffer {
+[7m  [0m [91m                                                       ~~~~~~[0m
+
+[96msrc/aes.ts[0m:[93m23[0m:[93m10[0m - [91merror[0m[90m TS2580: [0mCannot find name 'Buffer'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node`.
+
+[7m23[0m   return Buffer.concat([decipher.update(encrypted), decipher.final()]);
+[7m  [0m [91m         ~~~~~~[0m
+
+[96msrc/hash.ts[0m:[93m1[0m:[93m28[0m - [91merror[0m[90m TS2307: [0mCannot find module 'node:crypto' or its corresponding type declarations.
+
+[7m1[0m import { createHash } from 'node:crypto';
+[7m [0m [91m                           ~~~~~~~~~~~~~[0m
+
+[96msrc/hash.ts[0m:[93m3[0m:[93m30[0m - [91merror[0m[90m TS2580: [0mCannot find name 'Buffer'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node`.
+
+[7m3[0m export function sha256(data: Buffer | string): string {
+[7m [0m [91m                             ~~~~~~[0m
+
+[96msrc/hash.ts[0m:[93m7[0m:[93m30[0m - [91merror[0m[90m TS2580: [0mCannot find name 'Buffer'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node`.
+
+[7m7[0m export function sha512(data: Buffer | string): string {
+[7m [0m [91m                             ~~~~~~[0m
+
+[96msrc/hash.ts[0m:[93m11[0m:[93m28[0m - [91merror[0m[90m TS2580: [0mCannot find name 'Buffer'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node`.
+
+[7m11[0m export function sha1(data: Buffer | string): string {
+[7m  [0m [91m                           ~~~~~~[0m
+
+
+Found 14 errors in 2 files.
+
+Errors  Files
+    10  src/aes.ts[90m:1[0m
+     4  src/hash.ts[90m:1[0m
+[41m[30m ELIFECYCLE [39m[49m [31mCommand failed with exit code 2.[39m
