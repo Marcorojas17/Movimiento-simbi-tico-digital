@@ -1,0 +1,25 @@
+name: 🔐 Verify Seal & Provenance
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          lfs: true
+      - name: Verify SHA-256
+        run: |
+          EXPECTED="41a3683bbf83296eeb45da9b0e0ea5a7c095e78b493772e79520a92dbc39f4c3"
+          ASSET="provenance/2607086319439/original/VID-20260708-WA0038.mp4"
+          if [ ! -f "$ASSET" ]; then echo "Video no encontrado, skip"; exit 0; fi
+          ACTUAL=$(sha256sum "$ASSET" | awk '{print $1}')
+          [ "$EXPECTED" = "$ACTUAL" ] && echo "✅ Hash OK" || exit 1
