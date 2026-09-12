@@ -1,3 +1,9 @@
+/* ============================================================
+   KRONOS — Design System VERIFIED
+   Movimiento de Co-Creatividad Simbiótica y Respeto Digital
+   Acta 2607086319439
+   ============================================================ */
+
 :root {
   --primary: #FF0040;
   --accent: #00FF88;
@@ -25,19 +31,120 @@ body {
   overflow-x: hidden;
 }
 
+/* ============================================================
+   FONDO CIMÁTICO ANIMADO
+   Anillos concéntricos pulsantes inspirados en patrones de Chladni
+   + gradientes esquineros ambientales
+   Sin JavaScript · Sin WebGL · <1s carga · prefers-reduced-motion
+   ============================================================ */
+
 body::before {
   content: '';
   position: fixed;
-  inset: 0;
-  background:
-    radial-gradient(circle at 15% 15%, rgba(227, 6, 19, 0.06) 0%, transparent 45%),
-    radial-gradient(circle at 85% 85%, rgba(0, 200, 83, 0.06) 0%, transparent 45%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100vmin;
+  height: 100vmin;
+  border-radius: 50%;
   pointer-events: none;
   z-index: 0;
+
+  background-image:
+    radial-gradient(circle at 15% 15%, rgba(255, 0, 64, 0.06) 0%, transparent 45%),
+    radial-gradient(circle at 85% 85%, rgba(0, 255, 136, 0.06) 0%, transparent 45%),
+    radial-gradient(circle,
+      transparent 0%,
+      transparent 28%,
+      rgba(0, 255, 136, 0.04) 28.5%,
+      rgba(0, 255, 136, 0.04) 29%,
+      transparent 29.5%,
+      transparent 42%,
+      rgba(255, 215, 0, 0.035) 42.5%,
+      rgba(255, 215, 0, 0.035) 43%,
+      transparent 43.5%,
+      transparent 56%,
+      rgba(255, 0, 64, 0.03) 56.5%,
+      rgba(255, 0, 64, 0.03) 57%,
+      transparent 57.5%,
+      transparent 70%,
+      rgba(0, 255, 136, 0.025) 70.5%,
+      rgba(0, 255, 136, 0.025) 71%,
+      transparent 71.5%,
+      transparent 100%
+    );
+
+  animation: cymatic-breathe 12s ease-in-out infinite;
 }
+
+body::after {
+  content: '';
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 140vmin;
+  height: 140vmin;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+
+  background-image:
+    radial-gradient(circle,
+      transparent 0%,
+      transparent 33%,
+      rgba(255, 215, 0, 0.025) 33.5%,
+      rgba(255, 215, 0, 0.025) 34%,
+      transparent 34.5%,
+      transparent 50%,
+      rgba(0, 255, 136, 0.02) 50.5%,
+      rgba(0, 255, 136, 0.02) 51%,
+      transparent 51.5%,
+      transparent 100%
+    );
+
+  animation: cymatic-drift 18s ease-in-out infinite;
+}
+
+@keyframes cymatic-breathe {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.08);
+    opacity: 1;
+  }
+}
+
+@keyframes cymatic-drift {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.04);
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body::before,
+  body::after {
+    animation: none;
+  }
+}
+
+/* ============================================================
+   LAYOUT GENERAL
+   ============================================================ */
 
 main, nav, footer { position: relative; z-index: 1; }
 main { max-width: var(--max); margin: 0 auto; padding: 0 1.5rem 4rem; }
+
+/* ============================================================
+   NAV
+   ============================================================ */
 
 .topnav {
   position: sticky;
@@ -100,9 +207,14 @@ main { max-width: var(--max); margin: 0 auto; padding: 0 1.5rem 4rem; }
   .topnav__brand-name { display: none; }
   .topnav__links { gap: 0.9rem; }
   .topnav__links a { font-size: 0.78rem; }
-
 }
+
+/* ============================================================
+   HERO
+   ============================================================ */
+
 .hero { padding: 5rem 0 4rem; text-align: center; }
+
 .hero__badge {
   display: inline-block;
   padding: 0.4rem 1rem;
@@ -114,6 +226,7 @@ main { max-width: var(--max); margin: 0 auto; padding: 0 1.5rem 4rem; }
   letter-spacing: 0.15em;
   margin-bottom: 2rem;
 }
+
 .hero__title {
   font-size: clamp(2.2rem, 6vw, 4.2rem);
   font-weight: 800;
@@ -128,12 +241,14 @@ main { max-width: var(--max); margin: 0 auto; padding: 0 1.5rem 4rem; }
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
+
 .hero__subtitle {
   max-width: 620px;
   margin: 0 auto 2.5rem;
   color: var(--text-muted);
   font-size: 1.05rem;
 }
+
 .hero__meta {
   display: flex;
   flex-wrap: wrap;
@@ -161,6 +276,10 @@ main { max-width: var(--max); margin: 0 auto; padding: 0 1.5rem 4rem; }
 .hero__meta-value--link { color: var(--gold); text-decoration: none; }
 .hero__meta-value--link:hover { border-color: var(--gold); }
 
+/* ============================================================
+   SECCIONES GENERALES
+   ============================================================ */
+
 section { padding: 4rem 0; }
 section > h2 {
   font-size: clamp(1.5rem, 3vw, 2rem);
@@ -169,6 +288,10 @@ section > h2 {
   letter-spacing: -0.02em;
 }
 
+/* ============================================================
+   DEMO
+   ============================================================ */
+
 .demo__title { font-size: clamp(1.5rem, 3vw, 2rem); margin-bottom: 0.75rem; }
 .demo__lead, .cymatic__lead, .limits__lead {
   color: var(--text-muted);
@@ -176,12 +299,14 @@ section > h2 {
   margin-bottom: 2.5rem;
   font-size: 1rem;
 }
+
 .demo__grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.25rem;
   margin-bottom: 1.5rem;
 }
+
 .demo__card {
   background: var(--bg-card);
   border: 1px solid var(--border);
@@ -193,7 +318,9 @@ section > h2 {
 }
 .demo__card--ok { border-color: rgba(0, 200, 83, 0.35); }
 .demo__card--warn { border-color: rgba(255, 193, 7, 0.35); }
+
 .demo__card-header { display: flex; flex-direction: column; gap: 0.5rem; }
+
 .demo__verdict {
   display: inline-block;
   align-self: flex-start;
@@ -207,7 +334,9 @@ section > h2 {
 .demo__verdict--human { background: rgba(0, 200, 83, 0.15); color: var(--accent); }
 .demo__verdict--abstain { background: rgba(255, 193, 7, 0.15); color: var(--gold); }
 .demo__verdict--ai { background: rgba(227, 6, 19, 0.15); color: var(--primary); }
+
 .demo__scenario { font-size: 0.9rem; color: var(--text-muted); }
+
 .demo__confidence { display: flex; flex-direction: column; gap: 0.4rem; }
 .demo__confidence-label {
   font-size: 0.72rem;
@@ -227,6 +356,7 @@ section > h2 {
   transition: width 0.6s ease;
 }
 .demo__confidence-value { font-family: var(--mono); font-size: 0.9rem; }
+
 .demo__factors {
   list-style: none;
   display: flex;
@@ -237,6 +367,7 @@ section > h2 {
 .demo__factors li { display: flex; justify-content: space-between; }
 .demo__factors span { color: var(--text-muted); }
 .demo__factors b { font-family: var(--mono); font-weight: 500; }
+
 .demo__reason {
   font-size: 0.82rem;
   color: var(--text-muted);
@@ -244,6 +375,7 @@ section > h2 {
   padding-top: 0.5rem;
   border-top: 1px solid var(--border);
 }
+
 .demo__card-footer {
   display: flex;
   justify-content: space-between;
@@ -263,6 +395,10 @@ section > h2 {
 .demo__audit { font-family: var(--mono); }
 .demo__generated { font-size: 0.78rem; color: var(--text-muted); text-align: center; margin-top: 1rem; }
 
+/* ============================================================
+   CIMÁTICA
+   ============================================================ */
+
 .cymatic {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -270,6 +406,7 @@ section > h2 {
   align-items: center;
 }
 @media (max-width: 760px) { .cymatic { grid-template-columns: 1fr; } }
+
 .cymatic__stats {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -294,7 +431,9 @@ section > h2 {
   color: var(--accent);
   margin-top: 0.25rem;
 }
+
 .cymatic__pattern svg { display: block; width: 100%; max-width: 280px; margin: 0 auto; }
+
 .cymatic__bands {
   list-style: none;
   margin-top: 2rem;
@@ -324,6 +463,10 @@ section > h2 {
 }
 .cymatic__band-value { font-family: var(--mono); text-align: right; color: var(--text-muted); }
 
+/* ============================================================
+   PIPELINE / FLOW
+   ============================================================ */
+
 .flow__list {
   list-style: none;
   display: grid;
@@ -344,6 +487,10 @@ section > h2 {
 }
 .flow__step-title { font-size: 1rem; margin: 0.4rem 0 0.35rem; font-weight: 600; }
 .flow__step-desc { font-size: 0.85rem; color: var(--text-muted); }
+
+/* ============================================================
+   LÍMITES
+   ============================================================ */
 
 .limits__grid {
   display: grid;
@@ -380,6 +527,10 @@ section > h2 {
   font-weight: 700;
 }
 
+/* ============================================================
+   COMPLIANCE
+   ============================================================ */
+
 .compliance__list { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; }
 .compliance__item {
   background: var(--bg-card);
@@ -403,6 +554,10 @@ section > h2 {
 .compliance__status--ok { background: rgba(0, 200, 83, 0.15); color: var(--accent); }
 .compliance__status--progress { background: rgba(255, 193, 7, 0.15); color: var(--gold); }
 .compliance__desc { font-size: 0.85rem; color: var(--text-muted); }
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
 
 .footer {
   max-width: var(--max);
@@ -429,100 +584,3 @@ section > h2 {
 .footer__sep { opacity: 0.4; }
 .footer__acta { font-size: 0.78rem; opacity: 0.7; margin-top: 0.5rem; }
 .footer__acta code { font-family: var(--mono); color: var(--accent); }
-
-/* ============================================================
-   FONDO CIMÁTICO ANIMADO
-   Anillos concéntricos pulsantes inspirados en patrones de Chladni
-   Sin JavaScript · Sin WebGL · <1s carga · prefers-reduced-motion
-   ============================================================ */
-
-body::before {
-  content: '';
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100vmin;
-  height: 100vmin;
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 0;
-  background:
-    radial-gradient(circle,
-      transparent 0%,
-      transparent 28%,
-      rgba(0, 255, 136, 0.04) 28.5%,
-      rgba(0, 255, 136, 0.04) 29%,
-      transparent 29.5%,
-      transparent 42%,
-      rgba(255, 215, 0, 0.035) 42.5%,
-      rgba(255, 215, 0, 0.035) 43%,
-      transparent 43.5%,
-      transparent 56%,
-      rgba(255, 0, 64, 0.03) 56.5%,
-      rgba(255, 0, 64, 0.03) 57%,
-      transparent 57.5%,
-      transparent 70%,
-      rgba(0, 255, 136, 0.025) 70.5%,
-      rgba(0, 255, 136, 0.025) 71%,
-      transparent 71.5%,
-      transparent 100%
-    );
-  animation: cymatic-breathe 12s ease-in-out infinite;
-}
-
-body::after {
-  content: '';
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 140vmin;
-  height: 140vmin;
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 0;
-  background:
-    radial-gradient(circle,
-      transparent 0%,
-      transparent 33%,
-      rgba(255, 215, 0, 0.025) 33.5%,
-      rgba(255, 215, 0, 0.025) 34%,
-      transparent 34.5%,
-      transparent 50%,
-      rgba(0, 255, 136, 0.02) 50.5%,
-      rgba(0, 255, 136, 0.02) 51%,
-      transparent 51.5%,
-      transparent 100%
-    );
-  animation: cymatic-drift 18s ease-in-out infinite;
-}
-
-@keyframes cymatic-breathe {
-  0%, 100% {
-    transform: translate(-50%, -50%) scale(1);
-    opacity: 0.9;
-  }
-  50% {
-    transform: translate(-50%, -50%) scale(1.08);
-    opacity: 1;
-  }
-}
-
-@keyframes cymatic-drift {
-  0%, 100% {
-    transform: translate(-50%, -50%) scale(1);
-    opacity: 0.7;
-  }
-  50% {
-    transform: translate(-50%, -50%) scale(1.04);
-    opacity: 1;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  body::before,
-  body::after {
-    animation: none;
-  }
-}
