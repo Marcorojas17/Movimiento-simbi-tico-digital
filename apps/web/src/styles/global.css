@@ -429,3 +429,100 @@ section > h2 {
 .footer__sep { opacity: 0.4; }
 .footer__acta { font-size: 0.78rem; opacity: 0.7; margin-top: 0.5rem; }
 .footer__acta code { font-family: var(--mono); color: var(--accent); }
+
+/* ============================================================
+   FONDO CIMÁTICO ANIMADO
+   Anillos concéntricos pulsantes inspirados en patrones de Chladni
+   Sin JavaScript · Sin WebGL · <1s carga · prefers-reduced-motion
+   ============================================================ */
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100vmin;
+  height: 100vmin;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  background:
+    radial-gradient(circle,
+      transparent 0%,
+      transparent 28%,
+      rgba(0, 255, 136, 0.04) 28.5%,
+      rgba(0, 255, 136, 0.04) 29%,
+      transparent 29.5%,
+      transparent 42%,
+      rgba(255, 215, 0, 0.035) 42.5%,
+      rgba(255, 215, 0, 0.035) 43%,
+      transparent 43.5%,
+      transparent 56%,
+      rgba(255, 0, 64, 0.03) 56.5%,
+      rgba(255, 0, 64, 0.03) 57%,
+      transparent 57.5%,
+      transparent 70%,
+      rgba(0, 255, 136, 0.025) 70.5%,
+      rgba(0, 255, 136, 0.025) 71%,
+      transparent 71.5%,
+      transparent 100%
+    );
+  animation: cymatic-breathe 12s ease-in-out infinite;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 140vmin;
+  height: 140vmin;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  background:
+    radial-gradient(circle,
+      transparent 0%,
+      transparent 33%,
+      rgba(255, 215, 0, 0.025) 33.5%,
+      rgba(255, 215, 0, 0.025) 34%,
+      transparent 34.5%,
+      transparent 50%,
+      rgba(0, 255, 136, 0.02) 50.5%,
+      rgba(0, 255, 136, 0.02) 51%,
+      transparent 51.5%,
+      transparent 100%
+    );
+  animation: cymatic-drift 18s ease-in-out infinite;
+}
+
+@keyframes cymatic-breathe {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.08);
+    opacity: 1;
+  }
+}
+
+@keyframes cymatic-drift {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.04);
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body::before,
+  body::after {
+    animation: none;
+  }
+}
