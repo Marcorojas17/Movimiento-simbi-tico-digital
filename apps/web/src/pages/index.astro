@@ -12,6 +12,8 @@ const title = 'KRONOS — Co-Creatividad Simbiótica y Respeto Digital';
 const description =
   'Verificador de autenticidad vocal con ancla cimática 440 Hz, consentimiento explícito y auditoría NOM-151. Abstención honesta por diseño.';
 const base = import.meta.env.BASE_URL;
+const ogImage = `${base}og-image.png`;
+const canonicalUrl = 'https://marcorojas17.github.io/Movimiento-simbi-tico-digital/';
 ---
 
 <!DOCTYPE html>
@@ -19,18 +21,40 @@ const base = import.meta.env.BASE_URL;
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO básico -->
   <title>{title}</title>
   <meta name="description" content={description} />
+  <meta name="author" content="Marco Antonio Rojas Valdovinos" />
+  <link rel="canonical" href={canonicalUrl} />
+
+  <!-- Open Graph (Facebook, LinkedIn, WhatsApp) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="KRONOS" />
+  <meta property="og:locale" content="es_MX" />
+  <meta property="og:url" content={canonicalUrl} />
   <meta property="og:title" content={title} />
   <meta property="og:description" content={description} />
-  <meta property="og:type" content="website" />
+  <meta property="og:image" content={ogImage} />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="KRONOS — Co-Creatividad Simbiótica y Respeto Digital" />
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={ogImage} />
+  <meta name="twitter:image:alt" content="KRONOS — Co-Creatividad Simbiótica y Respeto Digital" />
+
+  <!-- Favicons -->
   <link rel="icon" type="image/svg+xml" href={`${base}favicon.svg`} />
   <link rel="apple-touch-icon" href={`${base}logo.svg`} />
 </head>
 <body>
   <nav class="topnav">
     <a href="#top" class="topnav__brand" aria-label="KRONOS — inicio">
-      <svg class="topnav__logo" viewBox="0 0 64 64" width="28" height="28" aria-hidden="true">
+      <svg class="topnav__logo" viewBox="0 0 64 64" width="32" height="32" aria-hidden="true">
         <circle cx="32" cy="32" r="32" fill="#0a0a0a"/>
         <circle cx="32" cy="32" r="29" fill="none" stroke="#00FF88" stroke-width="1.5" opacity="0.9"/>
         <circle cx="32" cy="32" r="22" fill="none" stroke="#FFD700" stroke-width="1.2" opacity="0.7"/>
