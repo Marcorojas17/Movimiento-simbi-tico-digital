@@ -12,6 +12,7 @@
 ## 🧬 ¿Qué es este movimiento?
 
 Somos una comunidad global que promueve la **co-creatividad simbiótica** entre humanos e inteligencias artificiales, bajo los principios del **respeto digital**, la transparencia algorítmica y la soberanía de los creadores sobre sus obras.
+![Landing VERIFIED](docs/assets/landing-preview.png)
 
 ## 🏛️ Acta Fundacional
 
