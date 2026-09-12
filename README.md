@@ -77,3 +77,51 @@ cd Movimiento-simbi-tico-digital
 corepack enable && pnpm install && pnpm test
 make verify
 
+🤝 Contribuir
+Lee CONTRIBUTING.md y CODE_OF_CONDUCT.md
+
+Busca issues con etiqueta good first issue
+
+Haz fork, crea rama y envía Pull Request
+
+Áreas donde necesitamos ayuda:
+
+📖 Traducciones a náhuatl, maya, mixteco
+
+⚖️ Asesoría legal en propiedad intelectual
+
+📊 Corpus de voces humanas y clonadas
+
+🔬 Paper técnico sobre ancla 440 Hz
+
+🛡️ Seguridad
+Reporta vulnerabilidades siguiendo SECURITY.md.
+Aspiramos a ISO/IEC 27001 y NOM-151-SCFI-2016.
+
+💰 Financiamiento
+KRONOS es open source y sin fines de lucro. El mantenimiento se
+costea por donaciones individuales, consultoría especializada y grants
+institucionales.
+
+Donaciones recurrentes: GitHub Sponsors
+
+Donación única: Ko-fi (próximamente)
+
+Consultoría LFDA 2026: marco.a.rojas.v@hotmail.com
+
+Transparencia completa en docs/funding.md.
+
+📜 Licencia
+Código: MIT
+
+Contenido y documentos: CC BY-NC-SA 4.0
+
+Uso comercial: consultar licencia separada
+
+📞 Contacto
+Canal	Dato
+Fundador	Marco Antonio Rojas Valdovinos
+Email	marco.a.rojas.v@hotmail.com
+Teléfono	+52 722 586 2335
+GitHub	Marcorojas17
+"La simbiosis entre humanos y máquinas no es una utopía: es una decisión."
