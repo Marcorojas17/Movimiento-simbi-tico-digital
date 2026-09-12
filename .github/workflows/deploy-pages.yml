@@ -28,12 +28,13 @@ jobs:
           cache: 'pnpm'
       - name: Install dependencies
         run: pnpm install --no-frozen-lockfile
-      - name: Build web app
-        run: pnpm --filter @kronos/web build
+      - name: Build all packages (Turbo)
+        run: pnpm build
       - name: Verify dist
         run: |
-          ls -la apps/web/dist/ || { echo "❌ dist no existe"; exit 1; }
+          ls -la apps/web/dist/ || { echo "❌ apps/web/dist no existe"; exit 1; }
           test -f apps/web/dist/index.html || { echo "❌ index.html no existe"; exit 1; }
+          echo "✅ dist OK"
       - uses: actions/configure-pages@v4
       - uses: actions/upload-pages-artifact@v3
         with:
