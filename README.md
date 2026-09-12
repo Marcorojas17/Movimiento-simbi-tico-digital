@@ -112,7 +112,7 @@ Reporta vulnerabilidades siguiendo [`SECURITY.md`](SECURITY.md). Aspiramos a **I
 KRONOS es open source y sin fines de lucro. El mantenimiento se costea por donaciones individuales, consultoría especializada y grants institucionales.
 
 - **Donaciones recurrentes:** [GitHub Sponsors](https://github.com/sponsors/Marcorojas17)
-- **Donación única:** Ko-fi (próximamente)
+- **Donación única:** Ingresa al link, elige cómo pagar, ¡y listo! https://link.mercadopago.com.mx/kronosprorocol
 - **Consultoría LFDA 2026:** marco.a.rojas.v@hotmail.com
 
 Transparencia completa en [`docs/funding.md`](docs/funding.md).
