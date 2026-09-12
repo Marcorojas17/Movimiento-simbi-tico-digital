@@ -1,7 +1,7 @@
 :root {
-  --primary: #e30613;
-  --accent: #00c853;
-  --gold: #ffc107;
+  --primary: #FF0040;
+  --accent: #00FF88;
+  --gold: #FFD700;
   --bg: #0a0a0a;
   --bg-soft: #111111;
   --bg-card: #161616;
@@ -43,15 +43,49 @@ main { max-width: var(--max); margin: 0 auto; padding: 0 1.5rem 4rem; }
   position: sticky;
   top: 0;
   display: flex;
-  gap: 1.5rem;
-  justify-content: center;
-  padding: 0.9rem 1.5rem;
+  gap: 2rem;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1.5rem;
   background: rgba(10, 10, 10, 0.85);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
   z-index: 10;
+  max-width: var(--max);
+  margin: 0 auto;
 }
-.topnav a {
+
+.topnav__brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+  color: var(--text);
+  transition: opacity 0.2s;
+}
+.topnav__brand:hover { opacity: 0.85; }
+
+.topnav__logo {
+  display: block;
+  transition: transform 0.4s ease;
+}
+.topnav__brand:hover .topnav__logo { transform: rotate(180deg); }
+
+.topnav__brand-name {
+  font-family: var(--mono);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--text);
+}
+
+.topnav__links {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.topnav__links a {
   color: var(--text-muted);
   text-decoration: none;
   font-size: 0.85rem;
@@ -59,8 +93,15 @@ main { max-width: var(--max); margin: 0 auto; padding: 0 1.5rem 4rem; }
   letter-spacing: 0.03em;
   transition: color 0.2s;
 }
-.topnav a:hover { color: var(--accent); }
+.topnav__links a:hover { color: var(--accent); }
 
+@media (max-width: 640px) {
+  .topnav { gap: 1rem; padding: 0.6rem 1rem; }
+  .topnav__brand-name { display: none; }
+  .topnav__links { gap: 0.9rem; }
+  .topnav__links a { font-size: 0.78rem; }
+
+}
 .hero { padding: 5rem 0 4rem; text-align: center; }
 .hero__badge {
   display: inline-block;
