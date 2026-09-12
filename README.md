@@ -21,10 +21,7 @@
 
 ## 🧬 ¿Qué es este movimiento?
 
-Somos una comunidad global que promueve la **co-creatividad simbiótica**
-entre humanos e inteligencias artificiales, bajo los principios del
-**respeto digital**, la **transparencia algorítmica** y la **soberanía**
-de los creadores sobre sus obras.
+Somos una comunidad global que promueve la **co-creatividad simbiótica** entre humanos e inteligencias artificiales, bajo los principios del **respeto digital**, la **transparencia algorítmica** y la **soberanía** de los creadores sobre sus obras.
 
 ---
 
@@ -71,57 +68,74 @@ Verificador de autenticidad vocal con:
 
 ## 🚀 Inicio rápido
 
-```bash
-git clone https://github.com/Marcorojas17/Movimiento-simbi-tico-digital.git
-cd Movimiento-simbi-tico-digital
-corepack enable && pnpm install && pnpm test
-make verify
+Clona el repositorio:
 
-🤝 Contribuir
-Lee CONTRIBUTING.md y CODE_OF_CONDUCT.md
+`git clone https://github.com/Marcorojas17/Movimiento-simbi-tico-digital.git`
 
-Busca issues con etiqueta good first issue
+Entra al directorio:
 
-Haz fork, crea rama y envía Pull Request
+`cd Movimiento-simbi-tico-digital`
 
-Áreas donde necesitamos ayuda:
+Instala dependencias y ejecuta tests:
 
-📖 Traducciones a náhuatl, maya, mixteco
+`corepack enable && pnpm install && pnpm test`
 
-⚖️ Asesoría legal en propiedad intelectual
+Verifica el acta fundacional:
 
-📊 Corpus de voces humanas y clonadas
+`make verify`
 
-🔬 Paper técnico sobre ancla 440 Hz
+---
 
-🛡️ Seguridad
-Reporta vulnerabilidades siguiendo SECURITY.md.
-Aspiramos a ISO/IEC 27001 y NOM-151-SCFI-2016.
+## 🤝 Contribuir
 
-💰 Financiamiento
-KRONOS es open source y sin fines de lucro. El mantenimiento se
-costea por donaciones individuales, consultoría especializada y grants
-institucionales.
+1. Lee [`CONTRIBUTING.md`](CONTRIBUTING.md) y [`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT.md)
+2. Busca issues con etiqueta `good first issue`
+3. Haz fork, crea rama y envía Pull Request
 
-Donaciones recurrentes: GitHub Sponsors
+**Áreas donde necesitamos ayuda:**
 
-Donación única: Ko-fi (próximamente)
+- 📖 Traducciones a náhuatl, maya, mixteco
+- ⚖️ Asesoría legal en propiedad intelectual
+- 📊 Corpus de voces humanas y clonadas
+- 🔬 Paper técnico sobre ancla 440 Hz
 
-Consultoría LFDA 2026: marco.a.rojas.v@hotmail.com
+---
 
-Transparencia completa en docs/funding.md.
+## 🛡️ Seguridad
 
-📜 Licencia
-Código: MIT
+Reporta vulnerabilidades siguiendo [`SECURITY.md`](SECURITY.md). Aspiramos a **ISO/IEC 27001** y **NOM-151-SCFI-2016**.
 
-Contenido y documentos: CC BY-NC-SA 4.0
+---
 
-Uso comercial: consultar licencia separada
+## 💰 Financiamiento
 
-📞 Contacto
-Canal	Dato
-Fundador	Marco Antonio Rojas Valdovinos
-Email	marco.a.rojas.v@hotmail.com
-Teléfono	+52 722 586 2335
-GitHub	Marcorojas17
-"La simbiosis entre humanos y máquinas no es una utopía: es una decisión."
+KRONOS es open source y sin fines de lucro. El mantenimiento se costea por donaciones individuales, consultoría especializada y grants institucionales.
+
+- **Donaciones recurrentes:** [GitHub Sponsors](https://github.com/sponsors/Marcorojas17)
+- **Donación única:** Ko-fi (próximamente)
+- **Consultoría LFDA 2026:** marco.a.rojas.v@hotmail.com
+
+Transparencia completa en [`docs/funding.md`](docs/funding.md).
+
+---
+
+## 📜 Licencia
+
+- **Código:** MIT
+- **Contenido y documentos:** CC BY-NC-SA 4.0
+- **Uso comercial:** consultar licencia separada
+
+---
+
+## 📞 Contacto
+
+| Canal | Dato |
+|-------|------|
+| **Fundador** | Marco Antonio Rojas Valdovinos |
+| **Email** | marco.a.rojas.v@hotmail.com |
+| **Teléfono** | +52 722 586 2335 |
+| **GitHub** | [Marcorojas17](https://github.com/Marcorojas17) |
+
+---
+
+> *"La simbiosis entre humanos y máquinas no es una utopía: es una decisión."*
