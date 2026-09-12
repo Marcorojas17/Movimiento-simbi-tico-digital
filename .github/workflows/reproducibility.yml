@@ -1,0 +1,84 @@
+name: 🔁 Reproducibility Check
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  reproducible-build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install --no-frozen-lockfile
+
+      - name: Build #1
+        run: pnpm build
+
+      - name: Compute hashes of build #1
+        run: |
+          find apps packages -type d -name dist -exec sh -c '
+            for dir do
+              find "$dir" -type f -exec sha256sum {} \;
+            done
+          ' sh {} + | sort > /tmp/build1.txt
+          echo "📊 Build #1: $(wc -l < /tmp/build1.txt) archivos hasheados"
+          head -20 /tmp/build1.txt
+
+      - name: Clean build artifacts
+        run: |
+          find apps packages -type d -name dist -exec rm -rf {} + 2>/dev/null || true
+          find apps packages -type d -name .astro -exec rm -rf {} + 2>/dev/null || true
+          rm -rf .turbo
+
+      - name: Build #2
+        run: pnpm build
+
+      - name: Compute hashes of build #2
+        run: |
+          find apps packages -type d -name dist -exec sh -c '
+            for dir do
+              find "$dir" -type f -exec sha256sum {} \;
+            done
+          ' sh {} + | sort > /tmp/build2.txt
+          echo "📊 Build #2: $(wc -l < /tmp/build2.txt) archivos hasheados"
+
+      - name: Compare builds
+        run: |
+          if diff /tmp/build1.txt /tmp/build2.txt > /tmp/build.diff; then
+            echo "✅ Build reproducible: los dos builds son idénticos"
+            echo ""
+            echo "Total archivos: $(wc -l < /tmp/build1.txt)"
+            echo "SHA-256 agregado: $(sha256sum /tmp/build1.txt | awk '{print $1}')"
+          else
+            echo "⚠️  Build NO reproducible: diferencias encontradas"
+            echo ""
+            echo "Primeras diferencias:"
+            head -20 /tmp/build.diff
+            echo ""
+            echo "Esto puede ser por: timestamps, hashes de build, o metadatos de Astro."
+            echo "No bloquea el CI — es informativo."
+          fi
+
+      - name: Upload build hashes
+        uses: actions/upload-artifact@v4
+        with:
+          name: reproducible-build-hashes
+          path: |
+            /tmp/build1.txt
+            /tmp/build2.txt
+          retention-days: 30
