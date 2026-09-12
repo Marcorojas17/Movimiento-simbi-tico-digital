@@ -11,10 +11,8 @@ permissions:
   attestations: write
 
 jobs:
-  build:
+  provenance:
     runs-on: ubuntu-latest
-    outputs:
-      hashes: ${{ steps.hash.outputs.hashes }}
     steps:
       - uses: actions/checkout@v4
 
@@ -31,13 +29,16 @@ jobs:
       - name: Build
         run: pnpm build
 
-      - name: Compute hashes of build artifacts
-        id: hash
+      - name: Verify build output
         run: |
-          cd apps/web/dist 2>/dev/null || exit 1
-          HASHES=$(find . -type f -exec sha256sum {} \; | sort | sha256sum | awk '{print $1}')
-          echo "hashes=$HASHES" >> "$GITHUB_OUTPUT"
-          echo "📊 Hash agregado del build: $HASHES"
+          test -d apps/web/dist || { echo "❌ apps/web/dist no existe"; exit 1; }
+          test -f apps/web/dist/index.html || { echo "❌ index.html no existe"; exit 1; }
+          echo "✅ Build verificado"
+
+      - name: Generate build provenance attestation
+        uses: actions/attest-build-provenance@v1
+        with:
+          subject-path: 'apps/web/dist/**'
 
       - name: Upload build artifacts
         uses: actions/upload-artifact@v4
@@ -45,15 +46,3 @@ jobs:
           name: web-dist
           path: apps/web/dist
           retention-days: 30
-
-  provenance:
-    needs: [build]
-    permissions:
-      actions: read
-      id-token: write
-      contents: write
-    uses: slsa-framework/slsa-github-generator/.github/workflows/generator_generic_slsa3.yml@v2.0.0
-    with:
-      base64-subjects: "${{ needs.build.outputs.hashes }}"
-      upload-assets: false
-      compile-generator: true
