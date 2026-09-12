@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="KRONOS — Ancla cimática 440 Hz">
+  <title>KRONOS — Ancla cimática 440 Hz</title>
+  <desc>Verificador de autenticidad vocal y procedencia digital. Acta 2607086319439.</desc>
+
+  <!-- Fondo -->
+  <circle cx="32" cy="32" r="32" fill="#0a0a0a"/>
+
+  <!-- Anillo exterior verde — verificado -->
+  <circle cx="32" cy="32" r="29" fill="none" stroke="#00FF88" stroke-width="1.5" opacity="0.9"/>
+
+  <!-- Anillo medio dorado — ancla 440 Hz -->
+  <circle cx="32" cy="32" r="22" fill="none" stroke="#FFD700" stroke-width="1.2" opacity="0.7"/>
+
+  <!-- Anillo interior rojo — señal -->
+  <circle cx="32" cy="32" r="15" fill="none" stroke="#FF0040" stroke-width="1" opacity="0.55"/>
+
+  <!-- Nodos cimáticos (patrón Chladni, 4 puntos cardinales) -->
+  <circle cx="32" cy="3" r="1.2" fill="#00FF88"/>
+  <circle cx="32" cy="61" r="1.2" fill="#00FF88"/>
+  <circle cx="3" cy="32" r="1.2" fill="#00FF88"/>
+  <circle cx="61" cy="32" r="1.2" fill="#00FF88"/>
+
+  <!-- Onda senoidal 440 Hz (4 semiciclos = 2 ciclos completos) -->
+  <path d="M 6 32 Q 12.5 16, 19 32 Q 25.5 48, 32 32 Q 38.5 16, 45 32 Q 51.5 48, 58 32"
+        fill="none" stroke="#FFD700" stroke-width="1.8" stroke-linecap="round"/>
+
+  <!-- Punto de anclaje central — decisión -->
+  <circle cx="32" cy="32" r="2.5" fill="#FF0040"/>
+  <circle cx="32" cy="32" r="1" fill="#0a0a0a"/>
+</svg>
