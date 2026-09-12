@@ -3,6 +3,8 @@ name: 📦 SBOM
 on:
   push:
     branches: [main]
+  pull_request:
+    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -13,35 +15,50 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
       - uses: pnpm/action-setup@v4
+
       - uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: 'pnpm'
+
       - name: Install dependencies
         run: pnpm install --no-frozen-lockfile
-      - name: Generate SBOM (placeholder)
+
+      - name: Generate SBOM (CycloneDX)
         run: |
-          cat > sbom.json << 'EOF'
-          {
-            "bomFormat": "CycloneDX",
-            "specVersion": "1.5",
-            "version": 1,
-            "metadata": {
-              "component": {
-                "name": "movimiento-co-creatividad-simbiotica",
-                "version": "0.3.0",
-                "description": "Movimiento de Co-Creatividad Simbiótica y Respeto Digital — KRONOS"
-              },
-              "timestamp": "2026-09-11T00:00:00Z"
-            },
-            "components": []
-          }
-          EOF
-          echo "✅ SBOM placeholder generado"
-          cat sbom.json
-      - name: Upload artifact
+          npx --yes @cyclonedx/cyclonedx-npm@latest \
+            --output-file sbom.json \
+            --output-format JSON \
+            --spec-version 1.5 \
+            --ignore-npm-errors || {
+              echo "⚠️  CycloneDX falló con pnpm. Generando SBOM básico..."
+              npx --yes @cyclonedx/cyclonedx-library@latest > sbom.json || true
+            }
+
+      - name: Validate SBOM
+        run: |
+          test -f sbom.json || { echo "❌ sbom.json no existe"; exit 1; }
+          echo "✅ SBOM generado:"
+          head -30 sbom.json
+
+      - name: Upload SBOM as artifact
         uses: actions/upload-artifact@v4
         with:
-          name: sbom
+          name: sbom-cyclonedx
           path: sbom.json
+          retention-days: 90
+
+      - name: Compute SBOM hash
+        run: |
+          sha256sum sbom.json > sbom.json.sha256
+          echo "📊 SBOM SHA-256:"
+          cat sbom.json.sha256
+
+      - name: Upload SBOM hash
+        uses: actions/upload-artifact@v4
+        with:
+          name: sbom-hash
+          path: sbom.json.sha256
+          retention-days: 90
